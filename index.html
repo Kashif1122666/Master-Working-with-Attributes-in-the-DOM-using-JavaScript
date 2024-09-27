@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chp 65-The DOM : Attributes</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img{
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        input, button{
+            margin: 5px 0 ;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>chp 65-The DOM : Attributes</h1>
+    <h2>Change Image Attributes</h2>
+    <img id="myImage" src="./images/instagram-logo.png" alt="Placeholder Image" title="Placeholder Image">
+    <input type="text" id="srcInput" placeholder="Enter new image URL">
+    <input type="text" id="altInput" placeholder="Enter new alt text">
+    <input type="text" id="titleInput" placeholder="Enter new title text">
+
+    <button onclick="changeAttributes()">Apply changes</button>
+
+    <script>
+        function changeAttributes() {
+            var image = document.getElementById("myImage");
+            var newSrc = document.getElementById("srcInput").value;
+            var newAlt = document.getElementById("altInput").value;
+            var newTitle = document.getElementById("titleInput").value;
+
+            if (newSrc) image.src = newSrc;
+            if (newAlt) image.alt = newAlt;
+            if (newTitle) image.title = newTitle;
+        }
+    </script>
+</body>
+</html>
